@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'home'
+    'home',
+    'bookings',
+    'food',
+    'resources',
 ]
 
 SITE_ID = 1
@@ -98,7 +101,7 @@ if "DEBUG" in os.environ:
 }
 else:
    DATABASES = {
-      'default': dj_database_url.parse(os.environ.get('DB_URL'))
+      'default': dj_database_url.parse(os.environ.get("DB_URL"))
     }
    
 
