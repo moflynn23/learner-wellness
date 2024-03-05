@@ -12,6 +12,17 @@ class BookingForm(forms.ModelForm):
         widget=forms.RadioSelect(attrs={'class': 'form-check-input'})
     )
 
+    
+    date = forms.DateTimeField(
+        widget=forms.widgets.SelectDateWidget(
+            empty_label=("Choose Year", "Choose Month", "Choose Day"),
+        )
+    )
+
+    HOUR_CHOICES = [(str(hour), f"{hour}:00") for hour in range(8, 18)]  # Adjust the range based on your availability
+    time = forms.ChoiceField(choices=HOUR_CHOICES, widget=forms.Select(attrs={'class': 'form-select'}))
+
     class Meta:
         model = Booking
-        fields = ['specialist_type', 'date_time', ]
+        fields = ['specialist_type', 'date', 'time' ]
+
