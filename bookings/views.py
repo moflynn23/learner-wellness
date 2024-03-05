@@ -7,7 +7,8 @@ from .forms import BookingForm
 
 
 def bookings(request):
-    return render(request, 'bookings/bookings.html')
+    form = BookingForm()
+    return render(request, 'bookings/bookings.html', {'form': form})
 
 
 # @login_required

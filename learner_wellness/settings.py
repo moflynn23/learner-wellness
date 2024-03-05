@@ -46,11 +46,13 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'crispy_bootstrap5',
     'home',
     'bookings',
     'food',
     'resources',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
