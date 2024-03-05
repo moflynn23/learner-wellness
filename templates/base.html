@@ -20,10 +20,14 @@
 <body>
     {% include 'includes/header.html' %}
 
-    <h1></h1>
-    {% block content %}
-    {% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
     <script src="{% static 'js/script.js' %}"></script>
+
+    {% include 'includes/footer.html' %}
 </body>
 </html>
 
