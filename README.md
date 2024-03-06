@@ -1,7 +1,48 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
-1. Project Overview
+Title: Learner Wellness
+
+Overview:
+- Foster a healthy university campus environment by centralising wellness resources.
+Potential features to include:
+
+Features:
+
+Enable Students to: 
+- Access resources and services that promote mental and physical well-being. 
+- Book sessions or join classes easily.
+
+Enable Therapists/Instructors to showcase their value: 
+- Create profiles, offer services, and manage bookings. 
+- Engage with the student community and get feedback.
+
+Enable Food Vendors to showcase their produce:
+- List healthy food options and attract health-conscious students.
+
+
+Features (!!!!!!! n.b. move this to apporiate sections of readme !!!!!!!)
+
+User/student registration.
+(i) Therapist/Instructor profiles: allow students to read about available professional and book sessions or classes.
+(ii) Event/Session booking: For therapy, yoga, meditation, or fitness classes.
+(iii) Food section: Highlighting healthy dining options on campus with ratings, reviews, and menu options.
+(iv) Resources: Articles, videos, and podcasts related to mental and physical wellness.
+
+
+1. Technical Project Overview
+
+Full Stack Web Development Hackathon: Build a Full Stack Web Application using Django.
+
+Participant activities: Development using Django, Python, HTML, CSS and JavaScript, UX Design, and Agile Project Management.
+
+Hackathon Objectives:
+- Use an Agile methodology to plan and design a Full-Stack Web application using an MVC framework and related contemporary technologies.
+- Implement a data model, application features and business logic to manage, query and manipulate data to meet given needs in a particular real-world domain.
+- Identify and apply authorisation, authentication and permission features in a Full-Stack web application solution.
+- Create manual and/or automated tests for a Full-Stack Web application using an MVC framework and related contemporary technologies.
+- Use a distributed version control system and a repository hosting service to document, develop and maintain a Full-Stack Web application using an MVC framework and related contemporary technologies.
+- Deploy a Full-Stack Web application using an MVC framework and related contemporary technologies to a cloud-based platform
 
 
 2. Explain the Design and Thinking Process
@@ -37,11 +78,18 @@
 - show that code passes validation
 - list known bugs
 
+Validator Testing
+HTML: No errors were returned when passing through the official W3C validator
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html
+CSS: No errors were found when passing through the official (Jigsaw) validator
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css
+
+
+
 6. Future Features
 - ran out of time
 - not sure if viable
-- not confortabel implementing
-
+- not confortable implementing
 
 7. Credit our Sources
 - images
