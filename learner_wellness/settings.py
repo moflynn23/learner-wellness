@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'bookings',
     'food',
     'resources',
+    'user_profiles',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
