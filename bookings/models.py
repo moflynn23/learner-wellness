@@ -18,3 +18,4 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.client.username} - {self.therapist.client.username} - {self.startTime}"
+
