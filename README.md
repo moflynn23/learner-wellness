@@ -1,5 +1,68 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+
+1. Project Overview
+
+
+2. Explain the Design and Thinking Process
+2. List of features
+
+- feature name
+- description of the feature
+- screenshot
+
+
+
+3. UX with user stories
+- site goals
+- design thought process
+- planning and wireframe design
+- design choices
+- user stories
+- wireframes
+
+
+4. Deployment
+- demonstrate we know how to deploy project
+- record to self and others of how to deploy and use our software
+- detailed list of deployment steps
+- heroku
+- elephantsql
+- cloudinary
+
+
+5. Demonstrate Testing
+- demostrate it has been tested well
+- demostrate it is responsive on multiple dcevices
+- show that code passes validation
+- list known bugs
+
+6. Future Features
+- ran out of time
+- not sure if viable
+- not confortabel implementing
+
+
+7. Credit our Sources
+- images
+- code
+- text 
+- link to relevant sites
+- authors name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Welcome Nicole Rojas,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
