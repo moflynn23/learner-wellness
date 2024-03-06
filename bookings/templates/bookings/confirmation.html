@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-2 text-info">Booking Confirmation</h1>
+    
+        <div class="alert alert-info mb-50 my-5" role="alert">
+            We have recieved your appointment request,our representative will contact you shortly.
+        </div>
+
+        <div class="card" style="width: 100rem;" >
+            <img class="card-img-top" src="https://img.freepik.com/free-vector/appointment-booking-with-calendar_52683-39831.jpg?size=626&ext=jpg&ga=GA1.2.1045061698.1671864935" alt="Card image cap">
+        </div>   
+
+        <button><a href="bookings.html" class="btn btn-primary text-white">Back to bookings</a></button>
+    
+    </div>
+    {% endblock %}
+{% endblock %}

@@ -1,20 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
-class Specialist(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(blank=True)
-    # Add other specialist fields
-
+class Therapist(models.Model):
+    client = models.CharField(max_length=255)
+    bio = models.CharField(max_length=255)
+    
+ 
     def __str__(self):
-        return self.user.username
+        return self.client.username
 
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    specialist = models.ForeignKey(Specialist, on_delete=models.CASCADE)
-    date_time = models.DateTimeField()
-    notes = models.TextField(blank=True)
-    # Add other booking fields
+    client = models.ForeignKey(User, on_delete=models.CASCADE)
+    therapist = models.ForeignKey(Therapist, on_delete=models.CASCADE, default=1)
+    startTime = models.DateTimeField()
+    
 
     def __str__(self):
-        return f"{self.user.username} - {self.specialist.user.username} - {self.date_time}"
+        return f"{self.client.username} - {self.therapist.client.username} - {self.startTime}"

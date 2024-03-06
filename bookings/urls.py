@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import bookings, booking_success_view  
+from .views import bookings, booking_confirmation
 
 
 urlpatterns = [
     path("", bookings, name="bookings"),
-    path('booking-success/', booking_success_view, name='booking_success'),
-   
+    path('booking-comfirmation/', booking_confirmation, name='booking_confirmation'),
+
 ]
