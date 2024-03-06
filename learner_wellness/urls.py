@@ -21,8 +21,9 @@ from django.urls import path, include
 urlpatterns = [
     path("", include('home.urls')),
     path("resources/", include("resources.urls")),
-    path("food", include("food.urls")),
+    path("food/", include("food.urls")),
     path('accounts/', include('allauth.urls')),
     path("bookings/", include("bookings.urls")),
     path('admin/', admin.site.urls),
+    path('djrichtextfield/', include('djrichtextfield.urls')),
 ]
