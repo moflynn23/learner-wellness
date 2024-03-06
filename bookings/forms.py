@@ -1,25 +1,26 @@
 from django import forms
-from .models import Booking
-
-
+from .models import Session, Therapist, User
 
 class BookingForm(forms.ModelForm):
-    class Meta:
-        model=Booking
-        fields=['speciality', 'therapist']
-
-    SPECIALITY_CHOICES = [
+    TITLE_CHOICES = [
         ('physical', 'Physical Wellness Appointment'),
         ('mental', 'Mental Health Appointment'),
     ]
 
-    HOUR_CHOICES = [(str(hour), f"{hour}:00") for hour in range(8, 18)]  # Rnage can be adjusted
+    HOUR_CHOICES = [(str(hour), f"{hour}:00") for hour in range(8, 18)]  # Range can be adjusted
     time = forms.ChoiceField(choices=HOUR_CHOICES, widget=forms.Select(attrs={'class': 'form-select'}))
 
+    title = forms.ChoiceField(choices=TITLE_CHOICES, widget=forms.Select(attrs={'class': 'form-select'}))
 
-    speciality = forms.ChoiceField(
-        choices=SPECIALITY_CHOICES,
-        widget=forms.RadioSelect(attrs={'class': 'form-check-input'})
-    )
+    startTime = forms.DateTimeField(widget=forms.TextInput(attrs={'class': 'form-control datetimepicker'}))
 
+    therapist = forms.ModelChoiceField(queryset=Therapist.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
+    client = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
+    status = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
 
+    class Meta:
+        model = Session
+        fields = ['title', 'startTime', 'time', 'therapist', 'client', 'status']
+
+    
+    
