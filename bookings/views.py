@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Specialist, Booking
-from .forms import BookingForm 
+from .forms import BookingForm
 
 
 # Create your views here.
@@ -8,8 +8,9 @@ from .forms import BookingForm
 
 def bookings(request):
     form = BookingForm()
-    return render(request, 'bookings/bookings.html', {'form': form})
-
+    specialists = Specialist.objects.values_list('user__username', flat=True)
+    print(specialists) 
+    return render(request, 'bookings/bookings.html', {'form': form, 'specialists': specialists})
 
 # @login_required
 def book_specialist(request, specialist_id):
