@@ -3,7 +3,7 @@ from .models import UserProfile
 
 
 @admin.register(UserProfile)
-class UserProifleAdmin(admin.ModelAdmin):
+class UserProfileAdmin(admin.ModelAdmin):
     list_display = (
         "first_name",
         "last_name",
