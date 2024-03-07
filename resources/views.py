@@ -8,12 +8,12 @@ class Resource(ListView):
     template_name = "resources/resources.html"
     model = Resource
     context_object_name = "resources"
-
+    print("hello")
 def resources_view(request):
-    video_resources = Resource.objects.filter(resource_type='video')
-    podcast_resources = Resource.objects.filter(resource_type='podcast')
-    article_resources = Resource.objects.filter(resource_type='article')
-
+    video_resources = Resource.objects.filter(resource_type='videos')
+    podcast_resources = Resource.objects.filter(resource_type='podcasts')
+    article_resources = Resource.objects.filter(resource_type='articles')
+    print(hello)
     context = {
         'video_resources': video_resources,
         'podcast_resources': podcast_resources,

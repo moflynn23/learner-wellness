@@ -3,9 +3,8 @@ from .views import Restaurant
 
 
 urlpatterns = [
-    path("", Restaurant.as_view(), name="restaurants"),
+    path("", Restaurant.as_view(), name="food"),
     
 ]
 
 
-    
