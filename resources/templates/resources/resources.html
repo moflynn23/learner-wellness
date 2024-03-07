@@ -1,8 +1,41 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} 
 
+{% block title %}Resources{% endblock %}
 
+{% block content %} 
+<h1 class="text-center p-2 d-block">
+    New Way to Build Healthy Lifestyle!
+</h1>
 
-{% block content %}
-<h2>This is the resources page</h2>
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+    <h2 class="text-center p-2 d-block">Physical Activities</h2>
+    {% for resource in resources %} 
+    <a href="" class="recipes" aria-label="Click to view {{resource.title}}">
+        <div class="card m-3" style="width: 18rem;">
+            <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
+            <div class="card-body">
+              <h2 class="card-title">{{resource.title}}</h2>
+              <p class="card-text">{{resource.body|truncatechars:100}}</p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+    <h2 class="text-center p-2 d-block">Therapy</h2>
+    {% for resource in resources %} 
+    <a href="" class="recipes" aria-label="Click to view {{resource.title}}">
+        <div class="card m-3" style="width: 18rem;">
+            <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
+            <div class="card-body">
+              <h2 class="card-title">{{resource.title}}</h2>
+              <p class="card-text">{{resource.body|truncatechars:100}}</p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
 {% endblock %}
+
