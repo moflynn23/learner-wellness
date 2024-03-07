@@ -5,4 +5,16 @@
 <h2>This is the food page</h2>
 <h3>Tastie, healthy & nutritious choices</h3>
 <h4>food, glorious food!</h4>
+
+<div class="container mt-4">
+    <label for="Restaurant">Select Restaurant:</label>
+    <select name="Restaurant" id="Restaurant">
+      {% for restaurant in restaurants %}
+          <option value="{{ Restaurant.id }}">{{ Restaurant.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
 {% endblock %}
+
+
