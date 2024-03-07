@@ -23,8 +23,20 @@ def book_specialist(request, specialist_id):
             return redirect('booking_success')  # Redirect to a success page
     else:
         form = BookingForm()
+        
+    therapists = Therapist.objects.all()
+    context = {'form': form, 'therapists': therapists}
+    return render(request, 'bookings/bookings.html', context)
 
-    return render(request, 'book_specialist.html', {'form': form, 'specialist': specialist})
+#class UserProfile(ListView):
+    #"""View all user profiles"""
 
-def booking_success_view(request):
-    return render(request, 'bookings/booking_success.html')
+ #   template_name = "user_profiles/user_profiles.html"
+  #  model = UserProfile
+   # context_object_name = "user_profiles"
+
+    
+    #   return render(request, 'book_specialist.html', {'form': form, 'specialist': specialist})
+
+#def booking_success_view(request):
+ #   return render(request, 'bookings/booking_success.html')

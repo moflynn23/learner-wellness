@@ -1,5 +1,12 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+pip install -r requirements.txt
+Successfully installed django-ckeditor-6.7.1 django-js-asset-2.2.0
+pip install django-ckeditor
+
+https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=1
+
+
 
 Title: Learner Wellness
 
