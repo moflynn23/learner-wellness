@@ -1,9 +1,16 @@
-from django.shortcuts import render, redirect
-from .models import Therapist, Booking
+from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Session, Therapist
 from .forms import BookingForm
 
-def bookings(request):
-    if request.method == "POST":
+
+class SessionListView(ListView):
+    template_name = "bookings/bookings.html"
+    model = Session
+    context_object_name = "bookings"
+
+def session(request):
+    if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
@@ -13,9 +20,4 @@ def bookings(request):
 
     therapists = Therapist.objects.all()
     context = {'form': form, 'therapists': therapists}
-    
     return render(request, 'bookings/bookings.html', context)
-
-
-def booking_confirmation(request):
-    return render(request, 'bookings/confirmation.html')
