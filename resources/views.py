@@ -10,9 +10,9 @@ class Resource(ListView):
     context_object_name = "resources"
 
 def resources_view(request):
-    video_resources = Resource.objects.filter(category='video')
-    podcast_resources = Resource.objects.filter(category='podcast')
-    article_resources = Resource.objects.filter(category='article')
+    video_resources = Resource.objects.filter(resource_type='video')
+    podcast_resources = Resource.objects.filter(resource_type='podcast')
+    article_resources = Resource.objects.filter(resource_type='article')
 
     context = {
         'video_resources': video_resources,
