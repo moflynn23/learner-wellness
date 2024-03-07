@@ -9,7 +9,7 @@
 <div class="container mt-4">
     <label for="Restaurant">Select Restaurant:</label>
     <select name="Restaurant" id="Restaurant">
-      {% for Restaurant in Restaurant %}
+      {% for restaurant in restaurants %}
           <option value="{{ Restaurant.id }}">{{ Restaurant.name }}</option>
       {% endfor %}
     </select>

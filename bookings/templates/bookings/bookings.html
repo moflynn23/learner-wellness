@@ -12,7 +12,7 @@
       <div class="container mt-4">
         <label for="therapist">Select Therapist:</label>
         <select name="therapist" id="therapist">
-          {% for therapist in therapists %}
+          {% for specialist in specialists %}
               <option value="{{ therapist.id }}">{{ therapist.name }}</option>
           {% endfor %}
         </select>
