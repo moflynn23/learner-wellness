@@ -7,17 +7,17 @@
 </div>
 
 <div>
-    <h2 class="text-center p-2 d-block">Physical Activities</h2>
+    <h2 class="text-center p-2 d-block">Videos</h2>
 </div>
 
 <div class="container d-flex flex-row flex-wrap justify-content-center">
      
-    {% for resource in resources %} 
+    {% for resource in video_resources %} 
     <div class="card m-3" style="width: 18rem;">
         <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
         <div class="card-body">
             <h2 class="card-title">{{resource.title}}</h2>
-            <p class="card-text">{{resource.body|truncatechars:100}}</p>
+            <p class="card-text">{{resource.body|safe}}</p>
         </div>
         
     </div>
@@ -26,17 +26,35 @@
 
 
 <div>
-    <h2 class="text-center p-2 d-block">Therapy</h2>
+    <h2 class="text-center p-2 d-block">Podcasts</h2>
 </div>
 
 <div class="container d-flex flex-row flex-wrap justify-content-center">
      
-    {% for resource in resources %} 
+    {% for resource in podcast_resources %} 
     <div class="card m-3" style="width: 18rem;">
         <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
         <div class="card-body">
             <h2 class="card-title">{{resource.title}}</h2>
-            <p class="card-text">{{resource.body|truncatechars:100}}</p>
+            <p class="card-text">{{resource.body|safe}}</p>
+        </div>
+        
+    </div>
+    {% endfor %}
+</div>
+
+<div>
+    <h2 class="text-center p-2 d-block">Articles</h2>
+</div>
+
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+     
+    {% for resource in article_resources %} 
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
+        <div class="card-body">
+            <h2 class="card-title">{{resource.title}}</h2>
+            <p class="card-text">{{resource.body|safe}}</p>
         </div>
         
     </div>

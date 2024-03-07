@@ -8,3 +8,18 @@ class Resource(ListView):
     template_name = "resources/resources.html"
     model = Resource
     context_object_name = "resources"
+
+def resources_view(request):
+    video_resources = Resource.objects.filter(category='video')
+    podcast_resources = Resource.objects.filter(category='podcast')
+    article_resources = Resource.objects.filter(category='article')
+
+    context = {
+        'video_resources': video_resources,
+        'podcast_resources': podcast_resources,
+        'article_resources': article_resources,
+    }
+
+    return render(request, 'resources/resources.html', context)
+
+    
