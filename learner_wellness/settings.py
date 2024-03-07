@@ -28,7 +28,7 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 SECRET_KEY = 'django-insecure-no8y^%i276mq&!@3&^_mti2*vsc4013nudl$p4-*%z5&e-t5nb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEBUG' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com']
@@ -112,7 +112,7 @@ WSGI_APPLICATION = 'learner_wellness.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-
+"""
 if "DEBUG" in os.environ:
   DATABASES = {
     'default': {
@@ -121,9 +121,12 @@ if "DEBUG" in os.environ:
     }
 }
 else:
-   DATABASES = {
-      'default': dj_database_url.parse(os.environ.get("DB_URL"))
+"""
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DB_URL"))
     }
+
    
 
 # Password validation

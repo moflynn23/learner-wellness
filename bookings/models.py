@@ -8,12 +8,12 @@ class Therapist(models.Model):
     """
     A model to create and manage user bookings
     """
-    client = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=255)
     
  
     def __str__(self):
-        return self.client.username
+        return self.name.username
 
 
 
