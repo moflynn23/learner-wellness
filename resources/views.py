@@ -16,5 +16,3 @@ def resources_view(request):
     }
 
     return render(request, 'resources/resources.html', context)
-
-    
