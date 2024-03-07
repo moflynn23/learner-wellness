@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic #added
 from django.views.generic import ListView
 
 from .models import Restaurant

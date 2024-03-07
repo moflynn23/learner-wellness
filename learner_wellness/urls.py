@@ -27,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('user_profiles/', include('user_profiles.urls')),
+    path('summernote/', include('django_summernote.urls')),# Add
 ]
