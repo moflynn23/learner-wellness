@@ -1,41 +1,51 @@
 {% extends "base.html" %} 
-
-{% block title %}Resources{% endblock %}
-
 {% block content %} 
-<h1 class="text-center p-2 d-block">
-    New Way to Build Healthy Lifestyle!
-</h1>
+{% load static %}
 
-<div class="container d-flex flex-row flex-wrap justify-content-center">
-    <h2 class="text-center p-2 d-block">Physical Activities</h2>
-    {% for resource in resources %} 
-    <a href="" class="recipes" aria-label="Click to view {{resource.title}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
-            <div class="card-body">
-              <h2 class="card-title">{{resource.title}}</h2>
-              <p class="card-text">{{resource.body|truncatechars:100}}</p>
-            </div>
-        </div>
-    </a>
-    {% endfor %}
+<div>
+<h1 class="text-center p-2 d-block">New Way to Build Healthy Lifestyle!</h1>
 </div>
 
-<div class="container d-flex flex-row flex-wrap justify-content-center">
-    <h2 class="text-center p-2 d-block">Therapy</h2>
-    {% for resource in resources %} 
-    <a href="" class="recipes" aria-label="Click to view {{resource.title}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
-            <div class="card-body">
-              <h2 class="card-title">{{resource.title}}</h2>
-              <p class="card-text">{{resource.body|truncatechars:100}}</p>
-            </div>
-        </div>
-    </a>
-    {% endfor %}
+<div>
+<h2 class="text-center p-2 d-block">Physical Activities</h2>
 </div>
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-md-4 text-center">
+        {% for resource in resources %} 
+        <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
+        </div>
+      
+     <div class="col-12 col-md-8">
+      <!-- Title goes between these h2 tags -->
+      <h2>{{ resource.title }}</h2>
+      <!-- Content goes directly underneath this -->
+      {{ resource.body | safe }}
+    </div>
+  </div>    
+    </div>
+    {% endfor %}
+
+<div>
+<h2 class="text-center p-2 d-block">Therapy</h2>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-md-4 text-center">
+        {% for resource in resources %} 
+        <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
+        </div>
+      
+     <div class="col-12 col-md-8">
+      <!-- Title goes between these h2 tags -->
+      <h2>{{ resource.title }}</h2>
+      <!-- Content goes directly underneath this -->
+      {{ resource.body | safe }}
+    </div>
+  </div>    
+    </div>
+    {% endfor %}
 {% endblock %}
 
