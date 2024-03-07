@@ -8,21 +8,21 @@
     <form action="" method="POST">
       {% csrf_token %}
       {{ form|crispy }}
-    </form>
 
-    <div class="container mt-4">
-      <form action="" method="post">
-        {% csrf_token %}
-      </form>
-    </div>
+      <div class="container mt-4">
+        <label for="therapist">Select Therapist:</label>
+        <select name="therapist" id="therapist">
+          {% for therapist in therapists %}
+              <option value="{{ therapist.id }}">{{ therapist.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
 
-    <div class="container mt-4">
-      <h3>Additional Comments:</h3>
-      <form action="" method="post">
-        {% csrf_token %}
+      <div class="container mt-4">
+        <h3>Additional Comments:</h3>
         <textarea name="query" rows="4" cols="50"></textarea>
         <button class="btn btn-outline-primary" type="submit">Submit</button>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 {% endblock %}
