@@ -8,5 +8,3 @@ class Resource(ListView):
     template_name = "resources/resources.html"
     model = Resource
     context_object_name = "resources"
-
-
