@@ -1,20 +1,37 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
+{% block content %} 
 {% load static %}
 
-{% block content %}
-<h2>This is the food page</h2>
-<h3>Tastie, healthy & nutritious choices</h3>
-<h4>food, glorious food!</h4>
+<div>
+    <h1 class="text-center p-2 d-block">Healthy Eating!</h1>
+</div>
 
-<div class="container mt-4">
-    <label for="Restaurant">Select Restaurant:</label>
-    <select name="Restaurant" id="Restaurant">
-      {% for restaurant in restaurants %}
-          <option value="{{ Restaurant.id }}">{{ Restaurant.name }}</option>
-      {% endfor %}
-    </select>
-  </div>
+<div>
+    <h2 class="text-center p-2 d-block">Tastie, healthy & nutritious choices</h2>
+</div>
+
+<div>
+  <h3 class="text-center p-2 d-block">food, glorious food!</h3>
+</div>
+
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+    {% for restaurant in restaurants %} 
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{.image.url}" class="card-img-top" alt="{{restaurant.restaurant_name}} {{restaurant.restaurant_menu}}">
+        <div class="card-body">
+            <h2 class="card-title">{restaurant.restaurant_name} </h2>
+            <p class="card-text">{restaurant.restaurant_menu}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
+
+
+
+
+
+
 
 
