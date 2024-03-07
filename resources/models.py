@@ -5,10 +5,9 @@ from django_resized import ResizedImageField
 from django.db import models
 
 # Choice Field
-RESOURCE_TYPES = (("physical activities", "Physical Activities"), ("therapy", "Therapy"))
+RESOURCE_TYPES = (("videos", "Videos"), ("podcasts", "Posdcasts"), ("articles", "Articles"))
 
 class Resource(models.Model):
-   
     title = models.CharField(max_length=200)
     body = RichTextField(max_length=10000, null=False, blank=False)
     image = ResizedImageField(
@@ -20,8 +19,7 @@ class Resource(models.Model):
         null=False,
     )
 
-    resource_type = models.CharField(max_length=50, choices=RESOURCE_TYPES, default="therapy")
+    resource_type = models.CharField(max_length=50, choices=RESOURCE_TYPES, default="videos")
 
-def __str__(self):
-    return self.title
-
+    def __str__(self):
+        return self.title
