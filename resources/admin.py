@@ -8,6 +8,7 @@ class ResourceAdmin(admin.ModelAdmin):
         "title",
         "image",
         "body",
+        "resource_type"
     )
 
     list_filter = ("resource_type",)
