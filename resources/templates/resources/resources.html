@@ -3,49 +3,48 @@
 {% load static %}
 
 <div>
-<h1 class="text-center p-2 d-block">New Way to Build Healthy Lifestyle!</h1>
+    <h1 class="text-center p-2 d-block">New Way to Build Healthy Lifestyle!</h1>
 </div>
 
 <div>
-<h2 class="text-center p-2 d-block">Physical Activities</h2>
+    <h2 class="text-center p-2 d-block">Physical Activities</h2>
 </div>
 
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 col-md-4 text-center">
-        {% for resource in resources %} 
-        <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
+            {% for resource in resources %} 
+                <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
         </div>
       
-     <div class="col-12 col-md-8">
-      <!-- Title goes between these h2 tags -->
-      <h2>{{ resource.title }}</h2>
-      <!-- Content goes directly underneath this -->
-      {{ resource.body | safe }}
+        <div class="col-12 col-md-8">
+            <!-- Title goes between these h2 tags -->
+            <h2>{{ resource.title }}</h2>
+            <!-- Content goes directly underneath this -->
+            {{ resource.body | safe }}
+        </div>
     </div>
-  </div>    
-    </div>
-    {% endfor %}
+</div>
+{% endfor %}
 
 <div>
-<h2 class="text-center p-2 d-block">Therapy</h2>
+    <h2 class="text-center p-2 d-block">Therapy</h2>
 </div>
 
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 col-md-4 text-center">
-        {% for resource in resources %} 
-        <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
+            {% for resource in resources %} 
+                <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
         </div>
       
-     <div class="col-12 col-md-8">
-      <!-- Title goes between these h2 tags -->
-      <h2>{{ resource.title }}</h2>
-      <!-- Content goes directly underneath this -->
-      {{ resource.body | safe }}
+        <div class="col-12 col-md-8">
+            <!-- Title goes between these h2 tags -->
+            <h2>{{ resource.title }}</h2>
+            <!-- Content goes directly underneath this -->
+            {{ resource.body | safe }}
+        </div>
     </div>
-  </div>    
-    </div>
-    {% endfor %}
+</div>
+{% endfor %}
 {% endblock %}
-
