@@ -1,0 +1,49 @@
+
+<!--
+<div class="container mt-4">
+    <form action="" method="POST">
+      {% csrf_token %}
+   #   {{ form|crispy }}
+   
+      <div class="container mt-4">
+        <h3>Additional Comments:</h3>
+        <textarea name="query" rows="4" cols="50"></textarea>
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+-->
+
+
+<!--
+
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="text-center">Book your appointment today!</h2>
+  <div class="container mt-4">
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+
+      <div class="container mt-4">
+        <label for="therapist">Select Therapist:</label>
+        <select name="therapist" id="therapist">
+          {% for therapist in therapists %}
+              <option value="{{ therapist.id }}">{{ therapist.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="container mt-4">
+        <h3>Additional Comments:</h3>
+        <textarea name="query" rows="4" cols="50"></textarea>
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
+
+-->

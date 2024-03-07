@@ -21,3 +21,11 @@ def session(request):
     therapists = Therapist.objects.all()
     context = {'form': form, 'therapists': therapists}
     return render(request, 'bookings/bookings.html', context)
+
+
+#class UserProfile(ListView):
+    #"""View all user profiles"""
+
+ #   template_name = "user_profiles/user_profiles.html"
+  #  model = UserProfile
+   # context_object_name = "user_profiles"
