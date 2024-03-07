@@ -5,7 +5,7 @@ from django_resized import ResizedImageField
 from django.db import models
 
 # Choice Field
-RESOURCE_TYPES = (("videos", "Videos"), ("podcasts", "Posdcasts"), ("articles", "Articles"))
+RESOURCE_TYPES = (("videos", "Videos"), ("podcasts", "Podcasts"), ("articles", "Articles"))
 
 class Resource(models.Model):
     title = models.CharField(max_length=200)
