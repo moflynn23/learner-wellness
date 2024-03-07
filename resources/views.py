@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Resource
 
-# Create your views here.
+class Resource(ListView):
+    """View all resources"""
 
-def resources(request):
-    return render(request, 'resources/resources.html')
+    template_name = "resources/resources.html"
+    model = Resource
+    context_object_name = "resources"

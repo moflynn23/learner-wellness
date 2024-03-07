@@ -1,26 +1,53 @@
 from django import forms
-from .models import Session, Therapist, User
+from .models import Booking
 
 class BookingForm(forms.ModelForm):
-    TITLE_CHOICES = [
+    class Meta:
+        model = Booking
+        fields = ['speciality', 'date', 'time', 'specialist']
+
+    SPECIALITY_CHOICES = [
         ('physical', 'Physical Wellness Appointment'),
         ('mental', 'Mental Health Appointment'),
     ]
 
-    HOUR_CHOICES = [(str(hour), f"{hour}:00") for hour in range(8, 18)]  # Range can be adjusted
+    speciality = forms.ChoiceField(
+        choices=SPECIALITY_CHOICES,
+        widget=forms.RadioSelect(attrs={'class': 'form-check-input'})
+    )
+
+    date = forms.DateTimeField(
+        widget=forms.widgets.SelectDateWidget(
+            empty_label=("Choose Year", "Choose Month", "Choose Day"),
+        )
+    )
+
+    HOUR_CHOICES = [(str(hour), f"{hour}:00") for hour in range(8, 18)]  # Adjust the range based on your availability
     time = forms.ChoiceField(choices=HOUR_CHOICES, widget=forms.Select(attrs={'class': 'form-select'}))
 
-    title = forms.ChoiceField(choices=TITLE_CHOICES, widget=forms.Select(attrs={'class': 'form-select'}))
+    specialist = forms.ChoiceField(choices=[])
 
-    startTime = forms.DateTimeField(widget=forms.TextInput(attrs={'class': 'form-control datetimepicker'}))
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['specialist'].choices = []
 
-    therapist = forms.ModelChoiceField(queryset=Therapist.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
-    client = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
-    status = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
+    def clean(self):
+        cleaned_data = super().clean()
+        speciality = cleaned_data.get('speciality')
 
-    class Meta:
-        model = Session
-        fields = ['title', 'startTime', 'time', 'therapist', 'client', 'status']
+        if speciality:
+            if speciality == 'physical':
+                self.fields['specialist'].choices = [
+                    ('Bob', 'Bob - Physical Wellness Specialist'),
+                    ('Joe', 'Joe - Physical Wellness Specialist'),
+                    ('Jill', 'Jill - Physical Wellness Specialist'),
+                ]
+            elif speciality == 'mental':
+                self.fields['specialist'].choices = [
+                    ('Bingus', 'Bingus - Mental Health Specialist'),
+                    ('Sam', 'Sam - Mental Health Specialist'),
+                    ('John', 'John - Mental Health Specialist'),
+                ]
 
-    
-    
+        return cleaned_data
+
