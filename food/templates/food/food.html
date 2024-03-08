@@ -17,10 +17,10 @@
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% for restaurant in restaurants %} 
     <div class="card m-3" style="width: 18rem;">
-        <img src="{.image.url}" class="card-img-top" alt="{{restaurant.restaurant_name}} {{restaurant.restaurant_menu}}">
+        <img src="{{restaurant.image.url}}" class="card-img-top" alt="{{restaurant.restaurant_name}}">
         <div class="card-body">
-            <h2 class="card-title">{restaurant.restaurant_name} </h2>
-            <p class="card-text">{restaurant.restaurant_menu}</p>
+            <h2 class="card-title">{{restaurant.restaurant_name|safe}} </h2>
+            <p class="card-text">{{restaurant.restaurant_menu|safe}}</p>
         </div>
     </div>
     {% endfor %}

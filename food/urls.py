@@ -1,3 +1,4 @@
+from . import views #added
 from django.urls import path
 from .views import Restaurant
 
