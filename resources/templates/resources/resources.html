@@ -17,8 +17,10 @@
         <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
         <div class="card-body">
             <h2 class="card-title">{{resource.title}}</h2>
-            <p class="card-text">{{resource.body|safe}}</p>
-        </div>
+            <p class="card-text">{{resource.body|safe}}
+               </p>
+                
+            </div>
         
     </div>
     {% endfor %}
@@ -56,7 +58,6 @@
             <h2 class="card-title">{{resource.title}}</h2>
             <p class="card-text">{{resource.body|safe}}</p>
         </div>
-        
     </div>
     {% endfor %}
 </div>

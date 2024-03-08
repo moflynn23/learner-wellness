@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} {{ resource.video_url|safe }} {% endblock %}
+
+{% block content %} 
+
+    <div class="container">
+        <div class="videos mt-3 p-1">
+            <p class="video-text">{{resource.video_url|safe |truncatechars:100}}</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/G0XUimJbz44?si=6d5cazzQNKq_fgce" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+  
+{% endblock %}
