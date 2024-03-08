@@ -57,7 +57,7 @@ Hackathon Objectives:
 - Wireframing Tool: Balsamiq
 - Project Management Kanban Board Tool: GitHub
 - Leverage Bootstrap: Yes
-- Leverage external APIs:	No
+- Leverage external APIs:	Cloudinary
 - Feedback from Hackathon 1 and 2:	Code review check for commented out code, logs, test data. Ensure all Git commit messages relevant
 - Define roles and responsibilities
 --  Potential Roles: 
@@ -69,7 +69,6 @@ Documenter,
 Environment Owner,
 ERD Designer (Models).
 
-
 ### 3. UX with user stories
 - site goals
 - design thought process
@@ -77,7 +76,6 @@ ERD Designer (Models).
 - design choices
 - user stories
 - wireframes
-
 
 ### 4. Deployment
 - demonstrate how to deploy project
@@ -96,9 +94,51 @@ ERD Designer (Models).
 - Subscribe to Eco
 - Eco dyno
 - Your Eco dyno subscription is now active
+- DISABLE_COLLECTSTATIC key has a value of 1
+- pip3 to install webserver gunicorn~=20.1
+- Procfile: add a command using gunicorn and codestar wsgi: web: gunicorn codestar.wsgi
+- DEBUG constant to False
+- Heroku dashboard: go to your app. Click on the Deploy tab
+- Reveal Config Vars in the Settings
+- DATABASE_URL = add the value of the ElephantSQL URL
 
  ## Elephant SQL
+- ElephantSQL is a PostgreSQL database hosting service that uses several cloud-hosted platforms
+- Log into ElephantSQL to access your dashboard
+- Create New Instance.
+- Tiny Turtle plan
+- Select a data centre near you
+- Create instance
+- Click on your newly named instance
+- Click on STATS.
+- Verify the version of PostgreSQL is 12 or higher
+- Create a file named env.py,
+- .gitignore file: add env.py
+- os.environ.setdefault("DATABASE_URL", "<your-database-URL>")
+- pip3 install dj-database-url~=0.5 psycopg2~=2.9, pip3 freeze --local > requirements.txt
+- settings.py: import os; import dj_database_url if os.path.isfile('env.py'):     import env
+- python3 manage.py createsuperuser
+
+## Cloudinary
+- A persistent file store
+- Cloudinary is an API, so we will need an API key to connect the Django project to it securely
+- pip3 install cloudinary~=1.36.0 dj3-cloudinary-storage~=0.0.6 urllib3~=1.26.15
+- pip3 freeze --local > requirements.txt
+- Sign up to Cloudinary
+- env.py: os.environ.setdefault("CLOUDINARY_URL", "<URL copied from Cloudinary in last step>")
+- settings.py: INSTALLED_APPS
+- Update the app to use Cloudinary
+- import the CloudinaryField from the cloudinary/models.py
+- python3 manage.py makemigrations
+- python3 manage.py migrate
+
+## Deployment with static files
+- whitenoise server
+- pip3 install whitenoise~=5.3.0
+- pip3 freeze --local > requirements.txt
+- settings.py: 'whitenoise.middleware.WhiteNoiseMiddleware',
 - 
+
 
 
 ### 5. Demonstrate Testing

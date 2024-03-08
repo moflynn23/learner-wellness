@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView
 from .models import UserProfile
 
 # Create your views here.
-class UserProfile(ListView):
+class UserProfiles(ListView):
     """View all user profiles"""
 
     template_name = "user_profiles/user_profiles.html"

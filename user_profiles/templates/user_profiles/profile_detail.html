@@ -1,24 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Profile Detail - {{ user_profile.first_name }} {{ user_profile.last_name }}{% endblock %}
+{% block title %}Profile Detail - {{ user_profile.first_name|safe }} {{ user_profile.last_name|safe }}{% endblock %}
 
 {% block content %} 
+
     <div class="container">
         <div class="user_profile mt-3 p-1">
             <div class="profile-img">
                 <img src="{{ user_profile.image.url }}" class="card-img-top" alt="{{ user_profile.first_name }} {{ user_profile.last_name }}">
             </div>
-            <div class="profile-detail">
-                <h1 class="text-center">{{ user_profile.first_name }} {{ user_profile.last_name }}</h1>
+            <div class="profile-detail text-center">
+                <h1 class="text-center">{{ user_profile.first_name|safe }} {{ user_profile.last_name|safe }}</h1>
                 <hr>
-                <p>{{ user_profile.about }}</p>
+                <p class="text-center">{{ user_profile.about|safe }}</p>
                 <!-- Add else if statement for edit and delete profile -->
             </div>
         </div>
-    </div>
-
-    <div class="description-container">
-        <h2>About {{ user_profile.first_name }}</h2>
-        <p>{{ user_profile.about|safe }}</p>
-    </div>
+  
 {% endblock %}
