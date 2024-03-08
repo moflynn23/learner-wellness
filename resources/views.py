@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Resource
 
 def resources_view(request):
@@ -16,3 +16,11 @@ def resources_view(request):
     }
 
     return render(request, 'resources/resources.html', context)
+
+class ResourcesDetail(DetailView):
+    """View a single resource"""
+
+    template_name = "resources/videos.html"
+    model = Resource
+    context_object_name = "video"
+

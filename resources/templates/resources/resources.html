@@ -17,8 +17,9 @@
         <img src="{{resource.image.url}}" class="card-img-top" alt="{{resource.title}}">
         <div class="card-body">
             <h2 class="card-title">{{resource.title}}</h2>
-            <p class="card-text">{{resource.body|safe}}</p>
-        </div>
+            <p class="card-text">{{resource.body|safe}}<a href="https://www.youtube.com/embed/G0XUimJbz44?si=6d5cazzQNK q_fgce" target="_blank" aria-label="Click to see more about {{resource.video_url|safe }}">see the video here</a></p>
+                
+            </div>
         
     </div>
     {% endfor %}
@@ -56,7 +57,6 @@
             <h2 class="card-title">{{resource.title}}</h2>
             <p class="card-text">{{resource.body|safe}}</p>
         </div>
-        
     </div>
     {% endfor %}
 </div>

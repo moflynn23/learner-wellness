@@ -1,5 +1,3 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
 <img src="static/images/article3.jpg" >
 
 # Title: Learner Wellness
@@ -24,10 +22,10 @@
 # Detailed Description
 
 ## User/student registration.
-- (i) Therapist/Instructor profiles: allow students to read about available professional and book sessions or classes.
-- (ii) Event/Session booking: For therapy, yoga, meditation, or fitness classes.
-- (iii) Food section: Highlighting healthy dining options on campus with ratings, reviews, and menu options.
-- (iv) Resources: Articles, videos, and podcasts related to mental and physical wellness.
+- Therapist/Instructor profiles: allow students to read about available professional and book sessions or classes.
+- Event/Session booking: For therapy, yoga, meditation, or fitness classes.
+- Food section: Highlighting healthy dining options on campus with ratings, reviews, and menu options.
+- Resources: Articles, videos, and podcasts related to mental and physical wellness.
 
 
 ### 1. Technical Project Overview
@@ -46,7 +44,6 @@ Hackathon Objectives:
 
 
 ### 2. Explain the Design and Thinking Process
-### 2. List of features
 
 - feature name
 - description of the feature
@@ -69,8 +66,7 @@ Documenter,
 Environment Owner,
 ERD Designer (Models).
 
-<img src="static/images/wireframe wellness 1.png" >
-<img src="static/images/wireframe wellness 2.png" >
+### ERD Design:
 <img src="static/images/erd welness app.png" >
 
 ### 3. UX with user stories
@@ -80,6 +76,10 @@ ERD Designer (Models).
 - design choices
 - user stories
 - wireframes
+
+### Wireframe Designs:
+<img src="static/images/wireframe wellness 1.png" >
+<img src="static/images/wireframe wellness 2.png" >
 
 ### 4. Deployment
 - demonstrate how to deploy project
@@ -152,6 +152,16 @@ Validator Testing
 - As a middleware:
 - In your unit tests (technically they're integration tests in Django)
 - If you chose to set it up as a middleware and enable it accordingly it will run for every rendered template in the tests too. Not just when you run the server.
+
+### Responsive Design:
+
+Tablet:
+
+<img src="static/images/repons_resources.png" >
+
+Smartphone:
+
+<img src="static/images/respos_resources2.png" >
 
 ### list known bugs
 - hyperlinks from the pdf information documents in resources app are not working as designed
