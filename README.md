@@ -69,6 +69,10 @@ Documenter,
 Environment Owner,
 ERD Designer (Models).
 
+<img src="static/images/wireframe wellness 1.png" >
+<img src="static/images/wireframe wellness 2.png" >
+<img src="static/images/erd welness app.png" >
+
 ### 3. UX with user stories
 - site goals
 - design thought process
@@ -137,23 +141,20 @@ ERD Designer (Models).
 - pip3 install whitenoise~=5.3.0
 - pip3 freeze --local > requirements.txt
 - settings.py: 'whitenoise.middleware.WhiteNoiseMiddleware',
-- 
-
-
 
 ### 5. Demonstrate Testing
-- demostrate it has been tested well
-- demostrate it is responsive on multiple dcevices
-- show that code passes validation
-- list known bugs
 
 Validator Testing
-HTML: No errors were returned when passing through the official W3C validator
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html
-CSS: No errors were found when passing through the official (Jigsaw) validator
-https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css
+- Note: Regular HTML validators do not work well with DTL markup
+- pip install django-html-validator
+- It won't do anything until you chose how you want to use it and you also need to explicitly enable it with a setting.
+- you have a choice of how you want to use this:
+- As a middleware:
+- In your unit tests (technically they're integration tests in Django)
+- If you chose to set it up as a middleware and enable it accordingly it will run for every rendered template in the tests too. Not just when you run the server.
 
-
+### list known bugs
+- hyperlinks from the pdf information documents in resources app are not working as designed
 
 ### 6. Future Features
 - ran out of time
