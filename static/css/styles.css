@@ -117,6 +117,7 @@ img.logo {
     align-items: center;
 }
 
+
 @media screen and (min-width: 62.5em) {
     
     .profile-img {
@@ -132,4 +133,8 @@ img.logo {
     .description-container {
         flex-direction: row;
     }
+}
+
+.card{
+    height: 50%;
 }
