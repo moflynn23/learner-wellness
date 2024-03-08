@@ -85,7 +85,7 @@ img.logo {
     width: 100%;
     background: url("../images/wellness.jpeg") no-repeat center center/cover;
     position: relative;
-}
+    }
 
 #cover-text {
     /* Final rgba value sets the opacity so it is semi-transparent */
@@ -112,9 +112,24 @@ img.logo {
 }
 
 .profile-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 280px;
+    margin: 0 auto;
+}
+
+.profile-img img {
+    border-radius: 8px;
+    width: 100%;
+}
+
+.profile-info {
+    flex-direction: row;
+    border: 1px solid var(--black);
+}
+
+.profile-detail {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 
@@ -125,16 +140,21 @@ img.logo {
         margin: 0 auto;
     }
 
+    .profile-info {
+        flex-direction: row;
+        border: 1px solid var(--black);
+    }
+
     .profile-detail {
-        width: 60%;
+        width: 100%;
         padding: 2rem;
     }
 
     .description-container {
-        flex-direction: row;
+                flex-direction: row;
     }
 }
 
-.card{
+    .card{
     height: 50%;
 }

@@ -5,11 +5,11 @@
 {% block content %} 
 
     <div class="container">
-        <div class="user_profile mt-3 p-1">
+        <div class="profile-info mt-3 p-1">
             <div class="profile-img">
                 <img src="{{ user_profile.image.url }}" class="card-img-top" alt="{{ user_profile.first_name }} {{ user_profile.last_name }}">
             </div>
-            <div class="profile-detail text-center">
+            <div class="profile-detail">
                 <h1 class="text-center">{{ user_profile.first_name|safe }} {{ user_profile.last_name|safe }}</h1>
                 <hr>
                 <p class="text-center">{{ user_profile.about|safe }}</p>
