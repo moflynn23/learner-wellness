@@ -1,20 +1,18 @@
-from django.shortcuts import render, redirect
+from django.views.generic import CreateView
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+from .models import Booking
 from .forms import BookingForm
-from .models import Specialist, Booking
-from django.views.generic import ListView
 
+class AddBooking(LoginRequiredMixin, CreateView):
+    """Add booking view"""
 
-# Create your views here.
+    template_name = "bookings/add_booking.html"
+    model = Booking
+    form_class = BookingForm
+    success_url = "/bookings/"
 
-def bookings(request):
-    form = BookingForm()
-    specialists = Specialist.objects.values_list('user__username', flat=True)
-    return render(request, 'bookings/bookings.html', {'form': form, 'specialists': specialists})
-
-
-class Specialist(ListView):
-    """View all user profiles"""
-    template_name = "bookings/bookings.html"
-    model = Specialist
-    context_object_name = "specialists"
-
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(AddBooking, self).form_valid(form)

@@ -4,7 +4,7 @@
 
 {% block content %} 
 <h1 class="text-center p-2 d-block">
-    User Profiles
+    Meet our Team
 </h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% for user_profile in user_profiles %} 
@@ -12,7 +12,7 @@
         <img src="{{user_profile.image.url}}" class="card-img-top" alt="{{user_profile.first_name}} {{user_profile.last_name}}">
         <div class="card-body">
             <h2 class="card-title">{{user_profile.first_name}} {{user_profile.last_name}}</h2>
-            <p class="card-text">{{user_profile.about}}</p>
+            <p class="card-text">{{user_profile.about|safe}}</p>
         </div>
     </div>
     {% endfor %}
