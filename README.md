@@ -6,7 +6,7 @@ pip install django-ckeditor
 
 https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=1
 
-
+<img src="static/images/article3.jpg" height="60" width="60" >
 
 Title: Learner Wellness
 
