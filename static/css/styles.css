@@ -104,6 +104,32 @@ img.logo {
     color: #ffffff;
 }
 
+/*User profile*/
 
+.description-container {
+    display: flex;
+    flex-direction: column;
+}
 
+.profile-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+@media screen and (min-width: 62.5em) {
+    
+    .profile-img {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .profile-detail {
+        width: 60%;
+        padding: 2rem;
+    }
+
+    .description-container {
+        flex-direction: row;
+    }
+}

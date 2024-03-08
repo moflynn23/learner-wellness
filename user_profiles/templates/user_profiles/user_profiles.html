@@ -8,6 +8,7 @@
 </h1>
 <div class="container d-flex flex-row flex-wrap justify-content-center">
     {% for user_profile in user_profiles %} 
+    <a href="{% url 'profile_detail' pk=user_profile.pk %}" class="profiles" aria-label="Click to see more about {{user_profile.first_name}} {{user_profile.last_name}}">
     <div class="card m-3" style="width: 18rem;">
         <img src="{{user_profile.image.url}}" class="card-img-top" alt="{{user_profile.first_name}} {{user_profile.last_name}}">
         <div class="card-body">
@@ -15,6 +16,7 @@
             <p class="card-text">{{user_profile.about}}</p>
         </div>
     </div>
+    </a>  
     {% endfor %}
 </div>
 {% endblock %}

@@ -28,7 +28,7 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 SECRET_KEY = 'django-insecure-no8y^%i276mq&!@3&^_mti2*vsc4013nudl$p4-*%z5&e-t5nb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com']
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
     'djrichtextfield',
+    'black',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
